@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Kali Wright</title>
+
+  <!-- Google Font for Receipt Style Banner -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: url('https://cdn.glitch.global/808d9e8a-5023-4b5d-a531-0e80f3108ef5/icons8-cursor-24%20(1).png?v=1746512023615'), auto;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #000;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: grey;
+    }
+
+    .social-media-icons a {
+      margin-left: 15px;
+    }
+
+    .social-media-icons img {
+      width: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-media-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .banner {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: 'VT323', monospace;
+    }
+
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background-image: url('https://cdn.glitch.global/808d9e8a-5023-4b5d-a531-0e80f3108ef5/photo_4958740924251352816_y%20(1).jpg?v=1746509651349');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .view-work-button {
+      position: absolute;
+      bottom: 80px;
+      right: 40px;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      z-index: 3;
+    }
+
+    .view-work-button:hover {
+      background-color: white;
+      color: black;
+      border-color: black;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .about-section {
+      padding: 80px 40px;
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-container {
+      max-width: 1100px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .id-card {
+      width: 400px;
+      height: 250px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .id-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      z-index: 1;
+    }
+
+    /* Glossy Overlay */
+    
+   .id-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 60%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+    .about-text {
+      max-width: 500px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .about-text h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .about-button {
+      display: inline-block;
+      margin-top: 25px;
+      background-color: black;
+      color: white;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .about-button:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+
+    .page-transition {
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text {
+        padding: 0 10px;
+      }
+
+      .id-card {
+        width: 280px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-transition">
+    <header>
+      <a href="index.html">
+        <img src="https://cdn.glitch.global/808d9e8a-5023-4b5d-a531-0e80f3108ef5/photo_4958740924251352782_x-removebg-preview.png?v=1746502880742" alt="Logo" class="logo">
+      </a>
+      <nav>
+        <a href="about.html">about</a>
+        <a href="work.html">work</a>
+        <a href="contact.html">contact</a>
+        <div class="social-media-icons">
+          <a href="http://www.instagram.com" target="_blank" title="Instagram">
+            <img src="https://cdn.glitch.global/808d9e8a-5023-4b5d-a531-0e80f3108ef5/icons8-instagram.svg?v=1746503359611" alt="Instagram">
+          </a>
+          <a href="http://www.youtube.com" target="_blank" title="YouTube">
+            <img src="https://cdn.glitch.global/808d9e8a-5023-4b5d-a531-0e80f3108ef5/icons8-youtube.svg?v=1746503351801" alt="YouTube">
+          </a>
+          <a href="mailto:kaliwrightdesigns@gmail.com" title="Email">
+            <img src="https://cdn.glitch.global/808d9e8a-5023-4b5d-a531-0e80f3108ef5/icons8-gmail.svg?v=1746503378036" alt="Email">
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="banner">
+      <marquee behavior="infinite" direction="left" scrollamount="10">
+        graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer  - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer - graphic designer 
+      </marquee>
+    </div>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="id-card" id="idCard">
+          <img src=https://cdn.glitch.global/808d9e8a-5023-4b5d-a531-0e80f3108ef5/card%20edit.jpg?v=1749749123555 alt="Photo of Kali Wright">
+        </div>
+        <div class="about-text">
+          <h1>Hi, I'm Kali.</h1>
+          <p>
+            Kali Wright is a graphic designer based in Queens, NY who brings a flexible, thoughtful approach to every project. With a strong sense of curiosity and a love for visual storytelling, she adapts easily across styles while staying grounded in her creative vision. Her work is driven by a desire to explore new ideas, grow her craft, and create design that speaks with purpose.
+          </p>
+      
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Kali Wright. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const card = document.getElementById('idCard');
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = -(y - centerY) / 5;
+      const rotateY = (x - centerX) / 5;
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    });
+  </script>
+</body>
+</html>
